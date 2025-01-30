@@ -1,4 +1,3 @@
-# backend/app.py
 import os
 from flask import Flask
 from flask_cors import CORS
@@ -7,7 +6,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 
-# Load environment variables from .env (optional)
+# Load environment variables from .env
 load_dotenv()
 
 # Import your models and blueprints
@@ -20,23 +19,23 @@ from views.session import session_bp
 def create_app():
     app = Flask(__name__)
 
-    # Configuration directly in app.py
-    app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "mysecretkey")
-    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://studygrupodb_user:heHErMTa9NYRbH7aLSIDUC1VtAR94Mfc@dpg-cudmhql2ng1s73ejia40-a.oregon-postgres.render.com/studygrupodb"
+    # Configuration from environment variables
+    app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "defaultsecretkey")
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URI")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "myjwtsecret")
+    app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "defaultjwtsecret")
 
     # Initialize extensions
-    CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": "https://study-app-jade.vercel.app"}})
     db.init_app(app)
     jwt = JWTManager(app)
     migrate = Migrate(app, db)
 
-    # Register your blueprints
-    app.register_blueprint(auth_bp, url_prefix="/auth")
-    app.register_blueprint(user_bp, url_prefix="/users")
-    app.register_blueprint(group_bp, url_prefix="/groups")
-    app.register_blueprint(session_bp, url_prefix="/sessions")
+    # Register blueprints with /api prefix
+    app.register_blueprint(auth_bp, url_prefix="/api/auth")
+    app.register_blueprint(user_bp, url_prefix="/api/users")
+    app.register_blueprint(group_bp, url_prefix="/api/groups")
+    app.register_blueprint(session_bp, url_prefix="/api/sessions")
 
     return app
 

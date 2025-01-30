@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api' // Adjust to your backend
+  baseURL: 'https://virtual-study-app.onrender.com/api' // Adjust to your backend
 })
 
 API.interceptors.request.use((config) => {
