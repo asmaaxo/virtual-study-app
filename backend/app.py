@@ -81,9 +81,9 @@ def create_app():
 
     # Register your blueprints
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
-    app.register_blueprint(user_bp, url_prefix="/users")
-    app.register_blueprint(group_bp, url_prefix="/groups")
-    app.register_blueprint(session_bp, url_prefix="/sessions")
+    app.register_blueprint(user_bp, url_prefix="/api/users")
+    app.register_blueprint(group_bp, url_prefix="/api/groups")
+    app.register_blueprint(session_bp, url_prefix="/api/sessions")
 
     return app
 
