@@ -5,6 +5,10 @@ const API = axios.create({
   baseURL: 'https://virtual-study-app.onrender.com/api' // Adjust to your backend
 })
 
+// Debug log to confirm baseURL
+console.log('API Base URL:', API.defaults.baseURL)
+
+
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
   if (token) {
