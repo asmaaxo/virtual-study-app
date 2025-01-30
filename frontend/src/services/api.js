@@ -2,10 +2,9 @@
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api' // Adjust if your backend differs
+  baseURL: 'http://localhost:5000/api' // Adjust to your backend
 })
 
-// Interceptor to attach token for each request
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
   if (token) {
