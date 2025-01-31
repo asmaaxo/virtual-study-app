@@ -4,7 +4,7 @@
 The **Virtual Study Group Platform** allows students to form and join study groups based on subjects or topics. It facilitates collaborative learning by enabling users to schedule study sessions, share resources, and communicate effectively within their groups.
 
 ## Live Demo
-🔗 **Live Link:** [https://study-app-jade.vercel.app](#)
+🔗 **Live Link:** https://study-app-jade.vercel.app
 
 ## Video Demo
 🔗 **Video Link:** [](#)
