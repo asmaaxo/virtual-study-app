@@ -5,6 +5,8 @@ The **Virtual Study Group Platform** allows students to form and join study grou
 
 ## Live Demo
 🔗 **Live Link:** [https://study-app-jade.vercel.app/](#)
+
+## Video Demo
 🔗 **Video Link:** [](#)
 
 ## Problem Statement
