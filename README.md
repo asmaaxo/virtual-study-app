@@ -7,7 +7,7 @@ The **Virtual Study Group Platform** allows students to form and join study grou
 🔗 **Live Link:** https://study-app-jade.vercel.app
 
 ## Video Demo
-🔗 **Video Link:** [](#)
+🔗 **Video Link:** https://www.awesomescreenshot.com/video/36146770?key=cc56fac11060b231e6a96ec85a99f510
 
 ## Problem Statement
 Studying alone can be challenging, and many students benefit from collaborative learning. However, organizing study groups can be difficult due to:
